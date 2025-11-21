@@ -1,7 +1,10 @@
 package cr.ac.utn.movil
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.view.View.generateViewId
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
