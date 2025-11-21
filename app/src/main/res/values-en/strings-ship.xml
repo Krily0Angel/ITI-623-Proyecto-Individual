@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ship_activity_label">Ship Maintenance</string>
+    <string name="ship_open_button">Open Ship Maintenance</string>
+
+    <!-- Form labels -->
+    <string name="ship_label_container_number">Container Number</string>
+    <string name="ship_label_person">Maintainer Name</string>
+    <string name="ship_label_datetime">Maintenance DateTime</string>
+    <string name="ship_label_container_type">Container Type</string>
+    <string name="ship_label_temperature">Temperature</string>
+    <string name="ship_label_weight">Weight</string>
+    <string name="ship_label_product">Product</string>
+
+    <!-- Buttons -->
+    <string name="ship_btn_add">Add</string>
+    <string name="ship_btn_update">Update</string>
+    <string name="ship_btn_delete">Delete</string>
+    <string name="ship_btn_clear">Clear</string>
+
+    <!-- Messages -->
+    <string name="ship_msg_container_required">Container number is required.</string>
+    <string name="ship_msg_person_required">Maintainer name is required.</string>
+    <string name="ship_msg_product_required">Please select a product.</string>
+    <string name="ship_msg_container_unique">Container number must be unique.</string>
+    <string name="ship_msg_datetime_not_future">Maintenance date/time cannot be in the future.</string>
+    <string name="ship_msg_invalid_alphanumeric">Container number must be alphanumeric.</string>
+    <string name="ship_msg_added">Record added.</string>
+    <string name="ship_msg_updated">Record updated.</string>
+    <string name="ship_msg_deleted">Record deleted.</string>
+
+    <!-- Spinner items -->
+    <string name="ship_type_dry">Dry</string>
+    <string name="ship_type_refrigerated">Refrigerated</string>
+
+    <!-- Products: example -->
+    <string name="ship_product_1">Bananas</string>
+    <string name="ship_product_2">Coffee</string>
+    <string name="ship_product_3">Electronics</string>
+
+    <!-- List heading -->
+    <string name="ship_list_heading">Ship Maintenances</string>
+
+    <string name="TextAppointment">Med Appointment</string>
+    <string name="TextVaccine">Vaccine</string>
+    <string name="TextLicense">License</string>
+    <string name="TextMedChecking">Med. Checking</string>
+    <string name="TextTemplate">Template</string>
+    <string name="ErrorMsgAdd">Error adding</string>
+    <string name="ErrorMsgUpdate">Error updating</string>
+    <string name="ErrorMsgRemove">Error removing</string>
+    <string name="ErrorMsgGetAll">Error getting the data list</string>
+    <string name="ErrorMsgGetById">Error getting a specific data</string>
+    <string name="MsgDataNoFound">The data was not found.</string>
+    <string name="TextSave_menu">Save</string>
+    <string name="TextDelete_menu">Delete</string>
+    <string name="TextCancel_mnu">Cancel</string>
+    <string name="MsgDuplicateDate">The information is duplicated.</string>
+    <string name="MsgSaveSuccess">The information is saved successfully.</string>
+    <string name="MsgDeleteSuccess">The information was deleted successfully.</string>
+    <string name="TextYes">Yes</string>
+    <string name="TextNo">No</string>
+    <string name="TextTitleDialogQuestion">Question...</string>
+    <string name="TextSaveActionQuestion">Are you sure to save the information?</string>
+    <string name="TextDeleteActionQuestion">Are you sure to delete the information?</string>
+
+</resources>
