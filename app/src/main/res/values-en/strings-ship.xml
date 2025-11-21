@@ -46,6 +46,7 @@
     <string name="TextLicense">License</string>
     <string name="TextMedChecking">Med. Checking</string>
     <string name="TextTemplate">Template</string>
+    <string name="app_name">Examen 1</string>
     <string name="ErrorMsgAdd">Error adding</string>
     <string name="ErrorMsgUpdate">Error updating</string>
     <string name="ErrorMsgRemove">Error removing</string>

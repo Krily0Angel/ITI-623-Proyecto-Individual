@@ -1,6 +1,7 @@
 package cr.ac.utn.movil
 
 import Entity.ShipContainerMaintenance
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
@@ -8,7 +9,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import controller.ShipContainerMaintenanceController
+import androidx.room.util.copy
+import cr.ac.utn.movil.ShipContainerMaintenanceController
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -35,13 +37,13 @@ class ShipMaintenanceActivity : AppCompatActivity() {
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
     private var selectedMillis: Long = System.currentTimeMillis()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ship_maintenance)
 
-        controller = ShipContainerMaintenanceController()
+        controller = ShipContainerMaintenanceController(this)
 
-        etContainer = findViewById(R.id.ship_et_container_number)
         etPerson = findViewById(R.id.ship_et_person)
         etDatetime = findViewById(R.id.ship_et_datetime)
         spinnerType = findViewById(R.id.ship_spinner_type)
@@ -54,7 +56,7 @@ class ShipMaintenanceActivity : AppCompatActivity() {
         btnDelete = findViewById(R.id.ship_btn_delete)
         btnClear = findViewById(R.id.ship_btn_clear)
 
-        listView = findViewById(R.id.ship_listview)
+
 
         setupSpinners()
         loadList()
@@ -63,10 +65,6 @@ class ShipMaintenanceActivity : AppCompatActivity() {
             pickDateTime()
         }
 
-        btnAdd.setOnClickListener { addRecord() }
-        btnUpdate.setOnClickListener { updateRecord() }
-        btnDelete.setOnClickListener { deleteRecord() }
-        btnClear.setOnClickListener { clearForm() }
 
         listView.setOnItemClickListener { _, _, position, _ ->
             selectedItem = items[position]
@@ -120,30 +118,6 @@ class ShipMaintenanceActivity : AppCompatActivity() {
         return null
     }
 
-    private fun addRecord() {
-        val error = validateForm()
-        if (error != null) {
-            showToast(error)
-            return
-        }
-        val record = ShipContainerMaintenance(
-            containerNumber = etContainer.text.toString().trim(),
-            person = etPerson.text.toString().trim(),
-            datetimeMillis = selectedMillis,
-            containerType = spinnerType.selectedItem.toString(),
-            temperature = etTemperature.text.toString().toDoubleOrNull() ?: 0.0,
-            weight = etWeight.text.toString().toDoubleOrNull() ?: 0.0,
-            product = spinnerProduct.selectedItem.toString()
-        )
-        val ok = controller.add(record)
-        if (!ok) {
-            showToast(getString(R.string.ship_msg_container_unique))
-            return
-        }
-        showToast(getString(R.string.ship_msg_added))
-        clearForm()
-        loadList()
-    }
 
     private fun updateRecord() {
         val sel = selectedItem
