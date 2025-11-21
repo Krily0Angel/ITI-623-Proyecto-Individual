@@ -1,5 +1,6 @@
 package cr.ac.utn.movil.interfaces
 
+import android.content.Context
 import cr.ac.utn.movil.identities.Identifier
 
 interface IDataManager {
@@ -8,4 +9,6 @@ interface IDataManager {
     fun remove (id: String)
     fun getAll(): List<Identifier>
     fun getById(id: String): Identifier?
+
+
 }
